@@ -1,0 +1,35 @@
+body {
+  font-family: "Nunito Sans", sans-serif;
+}
+
+header {
+  background: hsl(209, 23%, 22%);
+  transition: background 0.4s;
+
+  .header-container {
+    color: white;
+    @include flex-sb;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 1rem 3rem;
+    transition: color 0.4s;
+    @include grid-md {
+      padding: 1rem 1rem;
+    }
+
+    h1{
+      @include grid-sm {
+        font-size: 1.4rem;
+      }
+    }
+
+    .theme-container {
+      cursor: pointer;
+      @include flex-center;
+
+      .theme {
+        margin-left: 0.5rem;
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin flex-sb {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+@mixin large {
+  max-width: 1440px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+@mixin grid-md {
+  @media (max-width: 1200px) {
+    @content
+  }
+}
+
+@mixin grid-sm {
+  @media (max-width: 850px) {
+    @content
+  }
+}
+
+@mixin grid-xs {
+  @media (max-width: 600px) {
+    @content
+  }
+}

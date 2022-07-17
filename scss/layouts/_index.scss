@@ -1,0 +1,143 @@
+// @use "../mixins" as mixin;
+
+main {
+  min-height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  background: hsl(207, 26%, 17%);
+  transition: background 0.4s;
+
+  .header-main {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    @include large;
+    @include flex-sb;
+    padding: 1rem 3rem;
+    margin-top: 1rem;
+    @include grid-md {
+      padding: 1rem 1rem;
+    }
+    @include grid-xs {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+
+    .input-group {
+      position: relative;
+      @include grid-xs {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
+
+      input {
+        transition: all 0.4s;
+        padding: 1rem 1rem 1rem 3rem;
+        width: 500px;
+        background: hsl(209, 23%, 22%);
+        border: none;
+        border-radius: 5px;
+        color: white;
+        outline: none;
+
+        @include grid-sm {
+          width: 300px;
+        }
+
+        @include grid-xs {
+          width: 100%;
+        }
+
+        &::placeholder {
+          color: white;
+          transition: color 0.4s;
+        }
+      }
+
+      i {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 15px;
+        color: white;
+        transition: color 0.4s;
+      }
+    }
+
+    select {
+      background: hsl(209, 23%, 22%);
+      border: none;
+      color: white;
+      padding: 1rem;
+      border-radius: 5px;
+      outline: none;
+      // border: 1px solid red;
+      transition: all 0.4s;
+      width: 175px;
+    }
+
+  }
+
+  .countries-container {
+    a {
+      text-decoration: none;
+    }
+    @include large;
+
+    padding: 1rem 3rem;
+    flex: 1 1 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 300px);
+    grid-auto-rows: 300px;
+    gap: 4rem;
+    @include grid-md {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      padding: 1rem 1rem;
+    }
+    @include grid-sm {
+      grid-template-columns: repeat(2, 1fr);
+      padding: 1rem 3rem;
+    }
+    @include grid-xs {
+      grid-template-columns: repeat(1, 1fr);
+      grid-template-rows: repeat(2, 400px);
+      grid-auto-rows: 400px;
+    }
+
+    .country {
+      overflow: hidden;
+      border-radius: 5px;
+      background: hsl(209, 23%, 22%);
+      transition: all 0.4s;
+
+      .flag {
+        width: 100%;
+        height: 50%;
+        @include grid-xs {
+          height: 60%;
+        }
+      }
+
+      .country-details {
+        height: 50%;
+        padding: 1rem;
+        color: white;
+        transition: color 0.4s;
+        @include grid-xs {
+          height: 40%;
+        }
+
+        .country-name {
+          font-weight: bold;
+          margin-bottom: 1rem;
+        }
+
+        .item {
+          margin-bottom: 0.25rem;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,46 @@
+.light {
+  header {
+    background: $white;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+    .header-container {
+      color: black;
+    }
+  }
+  main {
+    background: $gray2;
+    .header-main {
+      .input-group {
+        input {
+          background: $white;
+          color: black;
+          box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+          &::placeholder {
+            color: black;
+          }
+        }
+
+        i {
+          color: black;
+        }
+      }
+
+      select {
+        background: $white;
+        color: black;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
+    }
+    .country {
+      background: $white;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+
+      .country-details {
+        color: black;
+      }
+    }
+  }
+}

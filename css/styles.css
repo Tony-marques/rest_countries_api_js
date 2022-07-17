@@ -126,6 +126,9 @@ main .header-main select {
   transition: all 0.4s;
   width: 175px;
 }
+main .header-main select option {
+  padding: 1rem;
+}
 main .countries-container {
   max-width: 1440px;
   width: 100%;

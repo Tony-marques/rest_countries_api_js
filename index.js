@@ -56,25 +56,17 @@ function displayCountries(countries) {
 function searchCountry(e) {
   document.querySelector(".countries-container").innerHTML = "";
   const search = e.target.value.toLowerCase();
-  // const response = await fetch(
-  //   `https://restcountries.com/v3.1/name/${search}?fullText=true`
-  // );
-  // const data = await response.json();
   const filter = dataCountries.filter((country) => {
-    // console.log(country.name.common.toLowerCase().includes(search));
     return country.name.common.toLowerCase().includes(search);
   });
-  // console.log(filter);
   displayCountries(filter);
 }
 
 select.addEventListener("change", (e) => {
-  // console.log(select.value);
   filterByRegion(select.value);
 });
 
 function filterByRegion(region) {
-  console.log(region);
   document.querySelector(".countries-container").innerHTML = "";
 
   let filterCountryByRegion;

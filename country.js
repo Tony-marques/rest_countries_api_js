@@ -1,4 +1,6 @@
 const countryName = new URL(location).searchParams.get("country");
+console.log(countryName);
+console.log(location);
 const countryContainer = document.querySelector(".country-container")
 
 async function getOneCountry() {
@@ -6,22 +8,14 @@ async function getOneCountry() {
     `https://restcountries.com/v3.1/name/${countryName}?fullText=true`
   );
   data = await response.json();
-  // console.log(data);
   displayCountry(data);
 }
 getOneCountry();
 
 function displayCountry(c) {
-  // console.log(c[0].status);
   const country = document.createElement("div");
   country.classList.add("country-info");
   countryContainer.appendChild(country);
-
-  // console.log(c[0].currencies);
-  for (let currency of Array.from(c[0].currencies)){
-    console.log(currency);
-    console.log("test");
-  }
 
   // country.innerHTML += `
   const display = `

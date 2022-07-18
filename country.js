@@ -1,6 +1,6 @@
 const countryName = new URL(location).searchParams.get("country");
-console.log(countryName);
-console.log(location);
+// console.log(countryName);
+// console.log(location);
 const countryContainer = document.querySelector(".country-container");
 
 async function getOneCountry() {
@@ -17,7 +17,25 @@ function displayCountry(c) {
   country.classList.add("country-info");
   countryContainer.appendChild(country);
 
-  // country.innerHTML += `
+  let currencyHtml = [];
+  for (const currency of Object.entries(c[0].currencies)) {
+    currencyHtml.push(currency[1].name);
+  }
+
+  let languageHtml = [];
+  for (const language of Object.entries(c[0].languages)) {
+    languageHtml.push(language[1]);
+  }
+
+  let borderHtml = [];
+  if (c[0].borders == undefined) {
+    borderHtml = "";
+  } else if (c[0].borders.length > 0) {
+    for (const border of c[0].borders) {
+      borderHtml.push(border);
+    }
+  }
+
   const display = `
     <img src="${c[0].flags.png}" class="flag"></img>
     <div class="details-country">
@@ -40,32 +58,36 @@ function displayCountry(c) {
           <div class="domain item">
             Top Level Domain: <span>${c[0].tld}</span>
           </div>
-          <div class="currencies item">Currencies: <span>${
-            c[0].currencies
-          }</span></div>
+          <div class="currencies item">Currencies: <span>${currencyHtml.join(
+            ", "
+          )}</span></div>
           <div class="languages item">
-            Languages: <span>Dutch, French</span>
+            Languages: <span>${languageHtml.join(", ")}</span>
           </div>
         </div>
       </div>
-      <div class="border-country">
+      <div class="border">
         <div class="border-country">
-          Border Countries:  
-          <span class="card-countries-border">France</span
-          ><span class="card-countries-border">France</span>
+          Border Countries:  ${borderHtml.length > 1 ? borderHtml
+            .map((b) => {
+              return `<span class="card-countries-border">${b}</span >`;
+            })
+            .join(" ") : "No countries"}
         </div>
       </div>
     </div>
     `;
-  if (c[0].borders) {
-    const countriesBorder = document.querySelector(".border-country")
-    const border = document.createElement("span")
-    c[0].borders.forEach((border) => {
-      console.log(border.name.common);
-      // border.innerText = ""
-    })
-    countriesBorder.appendChild(border)
-  }
+  // if (c[0].borders) {
+  //   // const countriesBorder = ;
+  //   // console.log(countriesBorder);
+  //   c[0].borders.forEach((b) => {
+  //     const border = document.createElement("span");
+  //     border.classList.add("card-countries-border");
+  //     // console.log(b);
+  //     border.innerText = b;
+  //     // console.log(border);
+  //     document.querySelector(".border-country").appendChild(border);
+  //   });
 
   country.innerHTML = display;
 }

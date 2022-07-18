@@ -243,7 +243,6 @@ main .countries-container .country .country-details .item {
   margin-right: 0.5rem;
 }
 .country-container .country-info {
-  border: 1px solid blue;
   height: 350px;
   display: flex;
   color: hsl(0deg, 0%, 100%);
@@ -258,7 +257,6 @@ main .countries-container .country .country-details .item {
   padding-left: 1rem;
   flex: 1 1 auto;
   margin-left: 6rem;
-  border: 1px solid yellow;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;

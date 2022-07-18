@@ -42,5 +42,24 @@
         color: black;
       }
     }
+
+    .country-container {
+      .back-btn {
+        background: $white;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+
+        i,
+        span {
+          color: black;
+        }
+      }
+      .country-info{
+        color: black;
+
+        .card-countries-border{
+          background: $white;
+        }
+      }
+    }
   }
 }

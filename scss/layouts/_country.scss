@@ -21,16 +21,18 @@
     align-items: center;
     padding: 0.25rem 0;
     color: white;
-    transition: box-shadow 0.3s;
+    transition: all 0.3s;
 
     &:hover {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
     }
     span {
       color: white;
+      transition: color 0.3s;
     }
     i {
       color: white;
+      transition: color 0.3s;
       margin-right: 0.5rem;
     }
   }
@@ -40,6 +42,7 @@
     height: 350px;
     display: flex;
     color: $white;
+    transition: color 0.3s;
     justify-content: space-between;
 
     .flag {
@@ -66,6 +69,7 @@
         padding: 0.25rem 1rem;
         margin-left: 0.5rem;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+        transition: background 0.3s;
       }
 
       .infos {

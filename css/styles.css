@@ -191,6 +191,12 @@ main .countries-container .country .country-details {
     height: 40%;
   }
 }
+main .countries-container .country .country-details .item {
+  font-weight: 600;
+}
+main .countries-container .country .country-details .item span {
+  font-weight: normal;
+}
 main .countries-container .country .country-details .country-name {
   font-weight: bold;
   margin-bottom: 1rem;

@@ -37,7 +37,7 @@ function displayCountries(countries) {
           <div class="country-name">${c.name.common}</div>
           <div class="country-more-details">
             <div class="country-population item">
-              Population: <span>${c.population}</span>
+              Population: <span>${c.population.toLocaleString("en-US")}</span>
             </div>
             <div class="country-region item">Region: <span>${
               c.region

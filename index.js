@@ -31,7 +31,7 @@ function displayCountries(countries) {
     countriesCountainer.appendChild(country);
     // country.innerHTML += `
     const display = `
-      <a href="/country.html?country=${c.name.common.toLowerCase()}">
+      <a href="./country.html?country=${c.name.common.toLowerCase()}">
         <img class="flag" src="${c.flags.png}"></img>
         <div class="country-details">
           <div class="country-name">${c.name.common}</div>

@@ -18,13 +18,22 @@ function displayCountry(c) {
   countryContainer.appendChild(country);
 
   let currencyHtml = [];
-  for (const currency of Object.entries(c[0].currencies)) {
-    currencyHtml.push(currency[1].name);
+  if (c[0].currencies == undefined) {
+    currencyHtml = "";
+  } else {
+    console.log(Object.entries(c[0].currencies));
+    for (const currency of Object.entries(c[0].currencies)) {
+      currencyHtml.push(currency[1].name);
+    }
   }
 
   let languageHtml = [];
-  for (const language of Object.entries(c[0].languages)) {
-    languageHtml.push(language[1]);
+  if (c[0].languages == undefined) {
+    languageHtml = "";
+  } else {
+    for (const language of Object.entries(c[0].languages)) {
+      languageHtml.push(language[1]);
+    }
   }
 
   let borderHtml = [];
@@ -58,21 +67,27 @@ function displayCountry(c) {
           <div class="domain item">
             Top Level Domain: <span>${c[0].tld}</span>
           </div>
-          <div class="currencies item">Currencies: <span>${currencyHtml.join(
-            ", "
-          )}</span></div>
+          <div class="currencies item">Currencies: <span>${
+            !currencyHtml ? "No money" : currencyHtml.join(", ")
+          }</span></div>
           <div class="languages item">
-            Languages: <span>${languageHtml.join(", ")}</span>
+            Languages: <span>${
+              !languageHtml ? "No language" : languageHtml.join(", ")
+            }</span>
           </div>
         </div>
       </div>
       <div class="border">
         <div class="border-country">
-          Border Countries:  ${borderHtml.length > 1 ? borderHtml
-            .map((b) => {
-              return `<span class="card-countries-border">${b}</span >`;
-            })
-            .join(" ") : "No countries"}
+          Border Countries:  ${
+            borderHtml.length > 1
+              ? borderHtml
+                  .map((b) => {
+                    return `<span class="card-countries-border">${b}</span >`;
+                  })
+                  .join(" ")
+              : "No countries"
+          }
         </div>
       </div>
     </div>

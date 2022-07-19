@@ -59,9 +59,9 @@ function displayCountry(c) {
           )}</span></p>
           <p class="region item">Region: <span>${c[0].region}</span></p>
           <p class="sub-region item">Sub Region: <span>${
-            c[0].subregion
+            c[0].subregion ? c[0].subregion : "No subregion"
           }</span></p>
-          <p class="capital item">Capital: <span>${c[0].capital}</span></p>
+          <p class="capital item">Capital: <span>${c[0].capital ? c[0].capital : "No capital"}</span></p>
         </div>
         <div class="right">
           <div class="domain item">

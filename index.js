@@ -43,7 +43,7 @@ function displayCountries(countries) {
               c.region
             }</span></div>
             <div class="country-capital item">
-              Capital: <span>${c.capital}</span>
+              Capital: <span>${c.capital ? c.capital : "No capital"}</span>
             </div>
           </div>
         </div>

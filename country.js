@@ -48,7 +48,7 @@ function displayCountry(c) {
   const display = `
     <img src="${c[0].flags.png}" class="flag"></img>
     <div class="details-country">
-      <div class="name-country">${c[0].name.common}</div>
+      <h1 class="name-country">${c[0].name.common}</h1>
       <div class="infos">
         <div class="left">
           <p class="name item">Native Name: <span>${
@@ -78,8 +78,10 @@ function displayCountry(c) {
         </div>
       </div>
       <div class="border">
-        <div class="border-country">
-          Border Countries:  ${
+        <div class="border-country item">
+          <div class="title">Border Countries: </div> 
+          <div class='card-countries-container'>
+          ${
             borderHtml.length > 1
               ? borderHtml
                   .map((b) => {
@@ -88,6 +90,7 @@ function displayCountry(c) {
                   .join(" ")
               : "No countries"
           }
+          </div>
         </div>
       </div>
     </div>

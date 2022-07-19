@@ -1,7 +1,10 @@
 .country-container {
-  height: calc(100vh - 75px);
+  min-height: calc(100vh - 75px);
   @include large;
   padding: 1rem 3rem;
+  @include grid-xs {
+    padding: 1rem 2rem;
+  }
 
   .link {
     display: flex;
@@ -22,6 +25,10 @@
     padding: 0.25rem 0;
     color: white;
     transition: all 0.3s;
+
+    @include grid-md-sm {
+      margin: 2rem 0 3rem 0;
+    }
 
     &:hover {
       box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.5);
@@ -44,44 +51,98 @@
     color: $white;
     transition: color 0.3s;
     justify-content: space-between;
+    @include grid-md-sm {
+      flex-direction: column;
+      height: auto;
+      // justify-content: start;
+      // align-items: start;
+    }
 
     .flag {
       flex: 2 1 none;
       max-width: 50%;
       object-fit: contain;
+
+      @include grid-md-sm {
+        max-width: 100%;
+      }
     }
 
-    img {
+    .border-country {
+      // border: 1px solid orange;
+      height: auto;
+      display: flex;
+      @include grid-md-sm {
+        margin-top: 2rem;
+        flex-direction: column;
+      }
+
+      .title {
+        min-width: 150px;
+      }
     }
 
     .details-country {
       padding-left: 1rem;
       flex: 1 1 auto;
       margin-left: 6rem;
-      // border: 1px solid yellow;
+      // border: 4px solid yellow;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+      @include grid-md {
+        margin-left: 3rem;
+        font-size: 0.9rem;
+      }
+
+      @include grid-md-sm {
+        margin-top: 2rem;
+        margin-left: 0;
+        padding-left: 0;
+      }
 
       .card-countries-border {
+        display: inline-block;
         background: $blue1;
         border-radius: 5px;
         padding: 0.25rem 1rem;
         margin-left: 0.5rem;
+        margin-bottom: 0.5rem;
         box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
         transition: background 0.3s;
+
+        @include grid-md {
+          font-size: 0.8rem;
+          padding: 0.25rem 0.75rem;
+        }
+      }
+
+      .item {
+        line-height: 2;
+        font-weight: 700;
+
+        span {
+          font-weight: normal;
+        }
       }
 
       .infos {
         display: flex;
 
+        @include grid-md-sm {
+          flex-direction: column;
+        }
+
         .left,
         .right {
           width: 50%;
-
-          .item {
-            line-height: 2;
+          @include grid-md-sm {
+            margin-top: 2rem;
+            width: 100%;
           }
+        }
+
+        .right {
         }
       }
     }

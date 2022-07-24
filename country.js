@@ -1,6 +1,4 @@
 const countryName = new URL(location).searchParams.get("country");
-// console.log(countryName);
-// console.log(location);
 const countryContainer = document.querySelector(".country-container");
 
 async function getOneCountry() {
@@ -21,7 +19,6 @@ function displayCountry(c) {
   if (c[0].currencies == undefined) {
     currencyHtml = "";
   } else {
-    console.log(Object.entries(c[0].currencies));
     for (const currency of Object.entries(c[0].currencies)) {
       currencyHtml.push(currency[1].name);
     }
@@ -61,7 +58,9 @@ function displayCountry(c) {
           <p class="sub-region item">Sub Region: <span>${
             c[0].subregion ? c[0].subregion : "No subregion"
           }</span></p>
-          <p class="capital item">Capital: <span>${c[0].capital ? c[0].capital : "No capital"}</span></p>
+          <p class="capital item">Capital: <span>${
+            c[0].capital ? c[0].capital : "No capital"
+          }</span></p>
         </div>
         <div class="right">
           <div class="domain item">
@@ -95,17 +94,6 @@ function displayCountry(c) {
       </div>
     </div>
     `;
-  // if (c[0].borders) {
-  //   // const countriesBorder = ;
-  //   // console.log(countriesBorder);
-  //   c[0].borders.forEach((b) => {
-  //     const border = document.createElement("span");
-  //     border.classList.add("card-countries-border");
-  //     // console.log(b);
-  //     border.innerText = b;
-  //     // console.log(border);
-  //     document.querySelector(".border-country").appendChild(border);
-  //   });
 
   country.innerHTML = display;
 }

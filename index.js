@@ -26,6 +26,7 @@ function sortCountries(countries) {
 
 function displayCountries(countries) {
   for (let c of countries) {
+    
     const country = document.createElement("div");
     country.classList.add("country");
     countriesCountainer.appendChild(country);

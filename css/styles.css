@@ -287,6 +287,10 @@ main .countries-container .country .country-details .item {
     flex-direction: column;
   }
 }
+.country-container .country-info .border-country a {
+  text-decoration: none;
+  color: white;
+}
 .country-container .country-info .border-country .title {
   min-width: 150px;
 }
@@ -401,6 +405,9 @@ main .countries-container .country .country-details .item {
 }
 .light main .country-container .country-info .card-countries-border {
   background: hsl(0deg, 0%, 100%);
+}
+.light main .country-container .country-info a {
+  color: black;
 }
 
 /*# sourceMappingURL=styles.css.map */

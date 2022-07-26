@@ -1,3 +1,4 @@
+
 const darkMode = document.querySelector(".theme-container");
 const theme = document.querySelector(".theme-container .theme");
 const i = document.querySelector(".theme-container i");
@@ -30,3 +31,4 @@ function defaultTheme() {
 }
 
 defaultTheme();
+

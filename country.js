@@ -38,9 +38,25 @@ function displayCountry(c) {
     borderHtml = "";
   } else if (c[0].borders.length > 0) {
     for (const border of c[0].borders) {
-      borderHtml.push(border);
+      fetch(`https://restcountries.com/v3.1/alpha/${border}`)
+        .then((response) => {
+          return response.json();
+        })
+        .then((result) => {
+          const card = document.querySelector(".card-countries-container");
+          const link = document.createElement("a");
+          link.classList.add("card-countries-border")
+          const country = result[0].name.common;
+          link.setAttribute("href", `./country.html?country=${country}`)
+          link.innerHTML = country;
+          console.log(country);
+          console.log(result);
+          card.appendChild(link);
+        });
     }
   }
+
+  // <span class="card-countries-border">${b}</span >
 
   const display = `
     <img src="${c[0].flags.png}" class="flag"></img>
@@ -81,7 +97,7 @@ function displayCountry(c) {
           <div class="title">Border Countries: </div> 
           <div class='card-countries-container'>
           ${
-            borderHtml.length > 1
+            borderHtml
               ? borderHtml
                   .map((b) => {
                     return `<span class="card-countries-border">${b}</span >`;
@@ -97,3 +113,13 @@ function displayCountry(c) {
 
   country.innerHTML = display;
 }
+
+// ${
+//   borderHtml
+//     ? borderHtml
+//         .map((b) => {
+//           return `<span class="card-countries-border">${b}</span >`;
+//         })
+//         .join(" ")
+//     : "No countries"
+// }

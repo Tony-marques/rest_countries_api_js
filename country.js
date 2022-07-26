@@ -49,8 +49,6 @@ function displayCountry(c) {
           const country = result[0].name.common;
           link.setAttribute("href", `./country.html?country=${country}`)
           link.innerHTML = country;
-          console.log(country);
-          console.log(result);
           card.appendChild(link);
         });
     }
